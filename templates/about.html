@@ -1,0 +1,25 @@
+<!-- <h1>Titile of the Website</h1>
+<h3>Subheader: Something Something</h3>
+<hr>
+<ul>
+    <li><a href="#"></a>Home Page</li>
+    <li><a href="#"></a>About Page</li>
+</ul>
+
+<p>Some Content on the About Page!</p> -->
+
+{% extends "base.html" %}
+
+{% block main %}
+<p>Some Content on the About Page!</p>
+<form action="/about" method="post">
+    {{ form.csrf_token() }}
+    {{ form.title.label }}
+    {{ form.title }}
+    {{ form.submit }}
+</form>
+{% if title %}
+<h1>
+    {{ title}}</h1>
+    {% endif %}
+{% endblock %}
