@@ -12,7 +12,7 @@
 
 {% block main %}
 <p>Some Content on the About Page!</p>
-<form action="/about" method="post">
+<form action="{{ url_for('add')}}" method="post">
     {{ form.csrf_token() }}
     {{ form.title.label }}
     {{ form.title }}
