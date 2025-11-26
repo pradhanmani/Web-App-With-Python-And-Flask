@@ -2,10 +2,10 @@
 
 {% block main %}
 <div class="container-fluid">
-  <form action="{{ url_for('add') }}" method="post">
-    {{ form.csrf_token }}
+  <form action="{{ url_for('edit', task_id=task.id) }}" method="post">
+    {{ form.hidden_tag() }}
     <div class="row">
-      <h3>Add Task</h3>
+      <h3>Edit Task</h3>
       <div class="col">
         {{ form.title(class="form-control") }}
       </div>
@@ -15,4 +15,5 @@
     </div>
   </form>
 </div>
+
 {% endblock %}
